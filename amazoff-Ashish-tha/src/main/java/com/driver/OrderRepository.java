@@ -21,7 +21,7 @@ public class OrderRepository {
 
     public void saveOrder(Order order){
         // your code here
-        orderMap.put(order.getId(id));
+        //orderMap.put(order.getId(id));
     }
 
     public void savePartner(String partnerId){
@@ -52,7 +52,7 @@ public class OrderRepository {
 
     public List<String> findOrdersByPartnerId(String partnerId){
         // your code here
-        orderMap.keySet(partnerId);
+       // orderMap.keySet(partnerId);
     }
 
     public List<String> findAllOrders(){
