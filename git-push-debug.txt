@@ -1,0 +1,135 @@
+21:50:07.604940 git.c:502               trace: built-in: git push -u origin main
+21:50:07.614557 run-command.c:673       trace: run_command: GIT_DIR=.git git remote-https origin https://github.com/Ashish-tha/springBootConceptAndProject.git
+21:50:07.614641 run-command.c:765       trace: start_command: /usr/local/opt/git/libexec/git-core/git remote-https origin https://github.com/Ashish-tha/springBootConceptAndProject.git
+21:50:07.634961 git.c:806               trace: exec: git-remote-https origin https://github.com/Ashish-tha/springBootConceptAndProject.git
+21:50:07.635376 run-command.c:673       trace: run_command: git-remote-https origin https://github.com/Ashish-tha/springBootConceptAndProject.git
+21:50:07.635412 run-command.c:765       trace: start_command: /usr/local/opt/git/libexec/git-core/git-remote-https origin https://github.com/Ashish-tha/springBootConceptAndProject.git
+21:50:07.682753 http.c:890              == Info: Couldn't find host github.com in the .netrc file; using defaults
+21:50:07.686611 http.c:890              == Info: Host github.com:443 was resolved.
+21:50:07.686630 http.c:890              == Info: IPv6: 64:ff9b::14cf:4952
+21:50:07.686636 http.c:890              == Info: IPv4: 20.207.73.82
+21:50:07.686695 http.c:890              == Info:   Trying [64:ff9b::14cf:4952]:443...
+21:50:07.764823 http.c:890              == Info: Connected to github.com (64:ff9b::14cf:4952) port 443
+21:50:07.769218 http.c:890              == Info: ALPN: curl offers h2,http/1.1
+21:50:07.770076 http.c:890              == Info: (304) (OUT), TLS handshake, Client hello (1):
+21:50:07.781031 http.c:890              == Info:  CAfile: /etc/ssl/cert.pem
+21:50:07.781043 http.c:890              == Info:  CApath: none
+21:50:07.843590 http.c:890              == Info: (304) (IN), TLS handshake, Server hello (2):
+21:50:07.844319 http.c:890              == Info: (304) (IN), TLS handshake, Unknown (8):
+21:50:07.845388 http.c:890              == Info: (304) (IN), TLS handshake, Certificate (11):
+21:50:07.850436 http.c:890              == Info: (304) (IN), TLS handshake, CERT verify (15):
+21:50:07.851097 http.c:890              == Info: (304) (IN), TLS handshake, Finished (20):
+21:50:07.851321 http.c:890              == Info: (304) (OUT), TLS handshake, Finished (20):
+21:50:07.851354 http.c:890              == Info: SSL connection using TLSv1.3 / AEAD-AES128-GCM-SHA256 / [blank] / UNDEF
+21:50:07.851365 http.c:890              == Info: ALPN: server accepted h2
+21:50:07.851378 http.c:890              == Info: Server certificate:
+21:50:07.851395 http.c:890              == Info:  subject: CN=github.com
+21:50:07.851408 http.c:890              == Info:  start date: Feb  5 00:00:00 2025 GMT
+21:50:07.851419 http.c:890              == Info:  expire date: Feb  5 23:59:59 2026 GMT
+21:50:07.851486 http.c:890              == Info:  subjectAltName: host "github.com" matched cert's "github.com"
+21:50:07.851512 http.c:890              == Info:  issuer: C=GB; ST=Greater Manchester; L=Salford; O=Sectigo Limited; CN=Sectigo ECC Domain Validation Secure Server CA
+21:50:07.851519 http.c:890              == Info:  SSL certificate verify ok.
+21:50:07.851759 http.c:890              == Info: using HTTP/2
+21:50:07.852521 http.c:890              == Info: [HTTP/2] [1] OPENED stream for https://github.com/Ashish-tha/springBootConceptAndProject.git/info/refs?service=git-receive-pack
+21:50:07.852536 http.c:890              == Info: [HTTP/2] [1] [:method: GET]
+21:50:07.852542 http.c:890              == Info: [HTTP/2] [1] [:scheme: https]
+21:50:07.852548 http.c:890              == Info: [HTTP/2] [1] [:authority: github.com]
+21:50:07.852553 http.c:890              == Info: [HTTP/2] [1] [:path: /Ashish-tha/springBootConceptAndProject.git/info/refs?service=git-receive-pack]
+21:50:07.852564 http.c:890              == Info: [HTTP/2] [1] [user-agent: git/2.51.1]
+21:50:07.852569 http.c:890              == Info: [HTTP/2] [1] [accept: */*]
+21:50:07.852574 http.c:890              == Info: [HTTP/2] [1] [accept-encoding: deflate, gzip]
+21:50:07.852578 http.c:890              == Info: [HTTP/2] [1] [pragma: no-cache]
+21:50:07.852687 http.c:837              => Send header, 0000000198 bytes (0x000000c6)
+21:50:07.852699 http.c:849              => Send header: GET /Ashish-tha/springBootConceptAndProject.git/info/refs?service=git-receive-pack HTTP/2
+21:50:07.852706 http.c:849              => Send header: Host: github.com
+21:50:07.852709 http.c:849              => Send header: User-Agent: git/2.51.1
+21:50:07.852713 http.c:849              => Send header: Accept: */*
+21:50:07.852717 http.c:849              => Send header: Accept-Encoding: deflate, gzip
+21:50:07.852721 http.c:849              => Send header: Pragma: no-cache
+21:50:07.852725 http.c:849              => Send header:
+21:50:07.852742 http.c:890              == Info: Request completely sent off
+21:50:08.126899 http.c:837              <= Recv header, 0000000013 bytes (0x0000000d)
+21:50:08.126943 http.c:849              <= Recv header: HTTP/2 401
+21:50:08.126972 http.c:837              <= Recv header, 0000000026 bytes (0x0000001a)
+21:50:08.126985 http.c:849              <= Recv header: server: GitHub-Babel/3.0
+21:50:08.127007 http.c:837              <= Recv header, 0000000054 bytes (0x00000036)
+21:50:08.127015 http.c:849              <= Recv header: content-security-policy: default-src 'none'; sandbox
+21:50:08.127054 http.c:837              <= Recv header, 0000000041 bytes (0x00000029)
+21:50:08.127065 http.c:849              <= Recv header: content-type: text/plain; charset=UTF-8
+21:50:08.127079 http.c:837              <= Recv header, 0000000040 bytes (0x00000028)
+21:50:08.127087 http.c:849              <= Recv header: www-authenticate: Basic realm="GitHub"
+21:50:08.127101 http.c:837              <= Recv header, 0000000020 bytes (0x00000014)
+21:50:08.127124 http.c:849              <= Recv header: content-length: 26
+21:50:08.127142 http.c:837              <= Recv header, 0000000037 bytes (0x00000025)
+21:50:08.127151 http.c:849              <= Recv header: date: Wed, 10 Dec 2025 16:20:08 GMT
+21:50:08.127168 http.c:837              <= Recv header, 0000000023 bytes (0x00000017)
+21:50:08.127175 http.c:849              <= Recv header: x-frame-options: DENY
+21:50:08.127189 http.c:837              <= Recv header, 0000000073 bytes (0x00000049)
+21:50:08.127200 http.c:849              <= Recv header: strict-transport-security: max-age=31536000; includeSubDomains; preload
+21:50:08.127219 http.c:837              <= Recv header, 0000000056 bytes (0x00000038)
+21:50:08.127229 http.c:849              <= Recv header: x-github-request-id: CCAD:F24FF:66C6B3:7214B6:69399DB7
+21:50:08.127242 http.c:837              <= Recv header, 0000000002 bytes (0x00000002)
+21:50:08.127250 http.c:849              <= Recv header:
+21:50:08.127370 http.c:890              == Info: Connection #0 to host github.com left intact
+21:50:08.128537 run-command.c:673       trace: run_command: 'git credential-osxkeychain get'
+21:50:08.128564 run-command.c:765       trace: start_command: /bin/sh -c 'git credential-osxkeychain get' 'git credential-osxkeychain get'
+21:50:08.163507 git.c:806               trace: exec: git-credential-osxkeychain get
+21:50:08.163994 run-command.c:673       trace: run_command: git-credential-osxkeychain get
+21:50:08.164040 run-command.c:765       trace: start_command: /usr/local/opt/git/libexec/git-core/git-credential-osxkeychain get
+21:50:08.197953 http.c:890              == Info: Found bundle for host: 0x600002d9c720 [can multiplex]
+21:50:08.197991 http.c:890              == Info: Re-using existing connection with host github.com
+21:50:08.198031 http.c:890              == Info: Server auth using Basic with user '143418925'
+21:50:08.198073 http.c:890              == Info: [HTTP/2] [3] OPENED stream for https://github.com/Ashish-tha/springBootConceptAndProject.git/info/refs?service=git-receive-pack
+21:50:08.198078 http.c:890              == Info: [HTTP/2] [3] [:method: GET]
+21:50:08.198082 http.c:890              == Info: [HTTP/2] [3] [:scheme: https]
+21:50:08.198085 http.c:890              == Info: [HTTP/2] [3] [:authority: github.com]
+21:50:08.198089 http.c:890              == Info: [HTTP/2] [3] [:path: /Ashish-tha/springBootConceptAndProject.git/info/refs?service=git-receive-pack]
+21:50:08.198093 http.c:890              == Info: [HTTP/2] [3] [authorization: Basic <redacted>]
+21:50:08.198097 http.c:890              == Info: [HTTP/2] [3] [user-agent: git/2.51.1]
+21:50:08.198100 http.c:890              == Info: [HTTP/2] [3] [accept: */*]
+21:50:08.198130 http.c:890              == Info: [HTTP/2] [3] [accept-encoding: deflate, gzip]
+21:50:08.198136 http.c:890              == Info: [HTTP/2] [3] [pragma: no-cache]
+21:50:08.198365 http.c:837              => Send header, 0000000289 bytes (0x00000121)
+21:50:08.198381 http.c:849              => Send header: GET /Ashish-tha/springBootConceptAndProject.git/info/refs?service=git-receive-pack HTTP/2
+21:50:08.198387 http.c:849              => Send header: Host: github.com
+21:50:08.198390 http.c:849              => Send header: Authorization: Basic <redacted>
+21:50:08.198394 http.c:849              => Send header: User-Agent: git/2.51.1
+21:50:08.198398 http.c:849              => Send header: Accept: */*
+21:50:08.198402 http.c:849              => Send header: Accept-Encoding: deflate, gzip
+21:50:08.198407 http.c:849              => Send header: Pragma: no-cache
+21:50:08.198410 http.c:849              => Send header:
+21:50:08.198467 http.c:890              == Info: Request completely sent off
+21:50:08.736308 http.c:837              <= Recv header, 0000000013 bytes (0x0000000d)
+21:50:08.736341 http.c:849              <= Recv header: HTTP/2 200
+21:50:08.736364 http.c:837              <= Recv header, 0000000026 bytes (0x0000001a)
+21:50:08.736375 http.c:849              <= Recv header: server: GitHub-Babel/3.0
+21:50:08.736399 http.c:837              <= Recv header, 0000000060 bytes (0x0000003c)
+21:50:08.736409 http.c:849              <= Recv header: content-type: application/x-git-receive-pack-advertisement
+21:50:08.736429 http.c:837              <= Recv header, 0000000054 bytes (0x00000036)
+21:50:08.736439 http.c:849              <= Recv header: content-security-policy: default-src 'none'; sandbox
+21:50:08.736454 http.c:837              <= Recv header, 0000000040 bytes (0x00000028)
+21:50:08.736464 http.c:849              <= Recv header: expires: Fri, 01 Jan 1980 00:00:00 GMT
+21:50:08.736477 http.c:837              <= Recv header, 0000000018 bytes (0x00000012)
+21:50:08.736486 http.c:849              <= Recv header: pragma: no-cache
+21:50:08.736499 http.c:837              <= Recv header, 0000000053 bytes (0x00000035)
+21:50:08.736509 http.c:849              <= Recv header: cache-control: no-cache, max-age=0, must-revalidate
+21:50:08.736521 http.c:837              <= Recv header, 0000000023 bytes (0x00000017)
+21:50:08.736530 http.c:849              <= Recv header: vary: Accept-Encoding
+21:50:08.736543 http.c:837              <= Recv header, 0000000037 bytes (0x00000025)
+21:50:08.736553 http.c:849              <= Recv header: date: Wed, 10 Dec 2025 16:20:08 GMT
+21:50:08.736566 http.c:837              <= Recv header, 0000000023 bytes (0x00000017)
+21:50:08.736575 http.c:849              <= Recv header: x-frame-options: DENY
+21:50:08.736590 http.c:837              <= Recv header, 0000000073 bytes (0x00000049)
+21:50:08.737126 http.c:849              <= Recv header: strict-transport-security: max-age=31536000; includeSubDomains; preload
+21:50:08.737160 http.c:837              <= Recv header, 0000000056 bytes (0x00000038)
+21:50:08.737172 http.c:849              <= Recv header: x-github-request-id: CCAD:F24FF:66C6FD:72151A:69399DB8
+21:50:08.737192 http.c:837              <= Recv header, 0000000002 bytes (0x00000002)
+21:50:08.737332 http.c:849              <= Recv header:
+21:50:08.737436 http.c:890              == Info: Connection #0 to host github.com left intact
+21:50:08.737495 run-command.c:673       trace: run_command: 'git credential-osxkeychain store'
+21:50:08.737525 run-command.c:765       trace: start_command: /bin/sh -c 'git credential-osxkeychain store' 'git credential-osxkeychain store'
+21:50:08.767379 git.c:806               trace: exec: git-credential-osxkeychain store
+21:50:08.767814 run-command.c:673       trace: run_command: git-credential-osxkeychain store
+21:50:08.767851 run-command.c:765       trace: start_command: /usr/local/opt/git/libexec/git-core/git-credential-osxkeychain store
+Everything up-to-date
+branch 'main' set up to track 'origin/main'.
