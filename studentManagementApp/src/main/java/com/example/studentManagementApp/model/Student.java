@@ -1,4 +1,4 @@
-package com.example.studentManagementApp;
+package com.example.studentManagementApp.model;
 
 public class Student {
     private int id; // primary key

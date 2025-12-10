@@ -1,4 +1,7 @@
 package com.example.studentManagementApp.exception;
 
-public class StudentExistExceptions {
+public class StudentExistException extends RuntimeException {
+    public StudentExistException(String message){
+        super(message);
+    }
 }

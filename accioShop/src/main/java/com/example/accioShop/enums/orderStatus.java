@@ -1,5 +1,8 @@
 package com.example.accioShop.enums;
 
-public enum Status {
-    
+public enum orderStatus {
+    DELIVERED,
+    CANCELLED,
+    IN_TRANSIT,
+    REJECTED
 }

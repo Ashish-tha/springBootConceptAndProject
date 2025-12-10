@@ -1,10 +1,17 @@
-package com.example.studentManagementApp;
+package com.example.studentManagementApp.controller;
 
+import com.example.studentManagementApp.exception.StudentExistException;
+import com.example.studentManagementApp.exception.StudentNotFoundException;
+import com.example.studentManagementApp.model.Student;
+import com.example.studentManagementApp.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import java.rmi.StubNotFoundException;
 import java.util.List;
+import java.util.SimpleTimeZone;
 
 @RestController
 @RequestMapping("/api/v1/student")
@@ -26,14 +33,25 @@ public class StudentController {
 //    }
 
     @GetMapping
-    public Student getStudentById(@RequestParam("id") int id){
-       return studentService.getStudentById(id);
+    public ResponseEntity getStudentById(@RequestParam("id") int id){
+       try{
+           return new ResponseEntity(studentService.getStudentById(id),HttpStatus.OK);
+       }
+       catch (StudentNotFoundException e){
+           return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
+       }
     }
 
 
     @PostMapping
-    public String addStudent(@RequestBody Student student){
-       return studentService.addStudent(student);
+    public ResponseEntity addStudent(@RequestBody Student student){
+       try{
+           String response=studentService.addStudent(student);
+           return new ResponseEntity(response,HttpStatus.CREATED);
+       }
+       catch (StudentExistException e){
+           return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
+       }
     }
 //
     @GetMapping("/{id}")
@@ -42,9 +60,16 @@ public class StudentController {
     }
 //// Multiple Variable in the input using PathVariable........
     @PutMapping("/id/{id}/age/{age}")
-    public String updateAge(@PathVariable("id")int id,
+    public ResponseEntity updateAge(@PathVariable("id")int id,
                             @PathVariable("age") int age){
-       return studentService.updateAge(id,age);
+       try{
+           String response =studentService.updateAge(id,age);
+           return new ResponseEntity<>(response,HttpStatus.CREATED);
+       } catch (StudentNotFoundException e) {
+           return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
+       }
+
+
     }
 //// Multiple Variable in the input using Request Param........
     @PutMapping
@@ -60,8 +85,14 @@ public class StudentController {
 
 //    Delete Student
     @DeleteMapping
-    public String deleteStudent(@RequestParam("id") int id){
-        return studentService.deleteStudent(id);
+    public ResponseEntity deleteStudent(@RequestParam("id") int id){
+        try{
+            String response= studentService.deleteStudent(id);
+            return new ResponseEntity(response,HttpStatus.CREATED);
+        }
+        catch (StudentNotFoundException e){
+            return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
+        }
     }
 
 }

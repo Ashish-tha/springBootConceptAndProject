@@ -1,7 +1,9 @@
-package com.example.studentManagementApp;
+package com.example.studentManagementApp.repository;
 
+import com.example.studentManagementApp.exception.StudentExistException;
+import com.example.studentManagementApp.exception.StudentNotFoundException;
+import com.example.studentManagementApp.model.Student;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +11,7 @@ import java.util.List;
 
 @Repository
 public class StudentRepository {
-    HashMap<Integer,Student> studentDb=new HashMap<>();
+    HashMap<Integer, Student> studentDb=new HashMap<>();
 
     public Student getStudentById(int id){
         if(!studentDb.containsKey(id)){
@@ -20,7 +22,7 @@ public class StudentRepository {
 
     public String addStudent(Student student) {
         if(studentDb.containsKey(student.getId())){
-            return "Student Already added";
+            throw new StudentExistException("Id "+ student.getId()+ " Exist");
         }
         studentDb.put(student.getId(),student);
         return "Student Added Successfully";
@@ -28,7 +30,7 @@ public class StudentRepository {
 
     public String updateAge(int id, int age) {
         if(!studentDb.containsKey(id)){
-            return "Invalid Id";
+           throw new StudentNotFoundException("Id "+ id+ " Not Found");
         }
         Student exixtingStudent=studentDb.get(id);
         exixtingStudent.setAge(age);
@@ -43,7 +45,7 @@ public class StudentRepository {
 
     public String deleteStudent(int id) {
         if(!studentDb.containsKey(id)){
-            return "Invalid Id";
+            throw new StudentNotFoundException("Id "+ id+ " Not Found");
         }
         studentDb.remove(id);
         return "Student Deleted Successfully";
