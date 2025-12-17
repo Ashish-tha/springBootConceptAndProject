@@ -14,10 +14,12 @@ public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 
-    public Customer addCustomer(Customer customer) {
-        Customer savedCustomer =customerRepository.save(customer);
-        return savedCustomer;
-    }
+//    public Customer addCustomer(Customer customer) {
+//        Customer savedCustomer =customerRepository.save(customer);
+//        return savedCustomer;
+//    }
+
+
 
     public Customer getCustomerById(int id) {
         Optional<Customer> optionalCustomer=customerRepository.findById(id);
