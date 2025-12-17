@@ -1,5 +1,17 @@
 package com.example.zwigato.model;
 
+import com.example.zwigato.utility.enums.Gender;
+import jakarta.annotation.Nullable;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+
 public class Customer {
 
     @Id
